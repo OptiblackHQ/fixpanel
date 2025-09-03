@@ -8,13 +8,14 @@
 	"author": "ak--47",
 	"scripts": {
 		"dev": "next dev",
-		"build": "next build && cp -r ./metube ./out/metube",
+		"build": "next build && next export && cp -r ./metube ./out/metube",
 		"start": "next start",
 		"lint": "next lint",
 		"headless": "node ./scripts/headless.js",
 		"sanity": "npx serve ./dev/",
 		"sanity:prod": "npx serve ./out/",
-		"metube": "npx serve ./metube/"
+		"metube": "npx serve ./metube/",
+		"deploy": "npm run build && gh-pages -d out"
 	},
 	"dependencies": {
 		"@google-cloud/storage": "^7.12.1",
@@ -48,6 +49,7 @@
 		"eslint": "^8",
 		"eslint-config-next": "14.2.6",
 		"fs-extra": "^11.2.0",
+		"gh-pages": "^6.3.0",
 		"postcss": "^8",
 		"puppeteer": "^23.3.0",
 		"sharp": "^0.33.5",

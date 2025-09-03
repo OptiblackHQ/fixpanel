@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	basePath:'/fixpanel',
+	assetPrefix: '/fixpanel/',
+	// Uncomment the following lines if you want to set basePath and assetPrefix conditionally based on the environment
 	// basePath: process.env.NODE_ENV === 'production' ? '/fixpanel' : '',
 	output: "export",
 	trailingSlash: true, // Updated option name
